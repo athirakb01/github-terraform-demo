@@ -9,7 +9,7 @@ disable_on_destroy = false
 resource "google_compute_network" "vpc" {
     name = "my-vpc"
     auto_create_subnetworks = false
-    depends_on = [google_project_srvice.compute]
+    depends_on = [google_project_service.compute]
 }
 
 #create subnets 
@@ -33,6 +33,6 @@ resource "google_compute_instance" "vm" {
     }
     network_interface {
         network = google_compute_network.vpc.id
-        subnetwork = google_compute_network.subnet.id
+        subnetwork = google_compute_subnetwork.subnet.id
     }
 }
