@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  terraform_plan:
+  terraform-plan:
     runs-on: ubuntu-latest
     
     permissions:
@@ -27,7 +27,7 @@ jobs:
       - name: terraform plan
         run: terraform plan
 
-  terraform_apply:
+  terraform-apply:
     runs-on: ubuntu-latest
     environment:
       name: production
