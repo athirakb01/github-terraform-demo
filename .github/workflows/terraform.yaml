@@ -26,6 +26,11 @@ jobs:
         run: terraform init
       - name: terraform plan
         run: terraform plan -out=tfplan 
+      - name: Upload tfplan to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: tfplan
+          retention-days: 1
 
   terraform-apply:
     needs: terraform-plan
