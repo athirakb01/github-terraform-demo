@@ -21,7 +21,7 @@ resource "google_compute_subnetwork" "subnet" {
 }
 
 # create vm
-resource "google_compute_instance" "vm2" {
+resource "google_compute_instance" "vm" {
     name = "my-vm"
     machine_type = "e2-medium"
     zone = "europe-west1-b"
@@ -38,7 +38,7 @@ resource "google_compute_instance" "vm2" {
 }
 
 
-resource "google_compute_instance" "vm" {
+resource "google_compute_instance" "vm2" {
     name = "my-vm2"
     machine_type = "e2-medium"
     zone = "europe-west1-c"
