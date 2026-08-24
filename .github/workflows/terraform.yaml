@@ -45,6 +45,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+      - name: Download Artifact
+        uses: actions/download-artifact@4
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
