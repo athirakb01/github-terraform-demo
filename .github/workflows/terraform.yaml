@@ -25,7 +25,7 @@ jobs:
       - name: terraform init
         run: terraform init
       - name: terraform plan
-        run: terraform plan
+        run: terraform plan -out=tfplan 
 
   terraform-apply:
     needs: terraform-plan
@@ -50,7 +50,5 @@ jobs:
           service_account: 'github-terraform@project-32294c92-6824-409d-940.iam.gserviceaccount.com'
       - name: terraform init
         run: terraform init
-      - name: terraform plan
-        run: terraform plan
       - name: terraform apply
-        run: terraform apply
+        run: terraform apply tfplan
