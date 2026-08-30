@@ -41,7 +41,7 @@ resource "google_compute_instance" "vm" {
 resource "google_compute_instance" "vm2" {
     name = "my-vm2"
     machine_type = "e2-micro"
-    zone = "europe-west1-c"
+    zone = "europe-west1-b"
     boot_disk {
         initialize_params {
             image = "debian-11-bullseye-v20240415"
