@@ -35,13 +35,6 @@ resource "google_compute_instance" "vm" {
         network = google_compute_network.vpc.id
         subnetwork = google_compute_subnetwork.subnet.id
     }
-}
-
-
-import {
-    to = google_compute_instance.impvm
-    id = "projects/project-32294c92-6824-409d-940/zones/europe-west1-c/instances/import-instance"
-}
 
 data "google_compute_network" "existingvpc" {
     name = "default"
