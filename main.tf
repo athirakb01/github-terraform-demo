@@ -38,18 +38,16 @@ resource "google_compute_instance" "vm" {
 }
 
 
-resource "google_compute_instance" "vm2" {
-    name = "my-vm2"
-    machine_type = "e2-micro"
-    zone = "europe-west1-b"
-    boot_disk {
-        initialize_params {
-            image = "debian-11-bullseye-v20240415"
-            size = 10
-        }
-    }
-    network_interface {
-        network = google_compute_network.vpc.id
-        subnetwork = google_compute_subnetwork.subnet.id
-    }
+import {
+    to = google_compute_instance.impvm
+    id = "projects/project-32294c92-6824-409d-940/zones/europe-west1-c/instances/import-instance"
+}
+
+data "google_compute_network" "existingvpc" {
+    name = "default"
+    project = "project-32294c92-6824-409d-940"
+}
+
+output "vpc_self_link" {
+    value = "data.google_compute_instance-compute_network.vpc.self_link"
 }
