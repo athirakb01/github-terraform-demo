@@ -37,6 +37,7 @@ resource "google_compute_instance" "vm" {
     }
 }
 
+/*
 data "google_compute_network" "existingvpc" {
     name = "default"
     project = "project-32294c92-6824-409d-940"
@@ -45,3 +46,4 @@ data "google_compute_network" "existingvpc" {
 output "vpc_self_link" {
     value = "data.google_compute_instance-compute_network.vpc.self_link"
 }
+*/
