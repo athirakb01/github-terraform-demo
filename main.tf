@@ -35,6 +35,7 @@ resource "google_compute_instance" "vm" {
         network = google_compute_network.vpc.id
         subnetwork = google_compute_subnetwork.subnet.id
     }
+}
 
 data "google_compute_network" "existingvpc" {
     name = "default"
