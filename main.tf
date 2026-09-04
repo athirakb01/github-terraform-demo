@@ -23,7 +23,7 @@ resource "google_compute_subnetwork" "subnet" {
 # create vm
 resource "google_compute_instance" "vm" {
     name = "my-vm"
-    machine_type = "n2-medium"
+    machine_type = "e2-medium"
     zone = "europe-west1-b"
     boot_disk {
         initialize_params {
